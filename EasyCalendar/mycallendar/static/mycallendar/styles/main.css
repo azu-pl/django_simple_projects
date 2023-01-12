@@ -1,0 +1,38 @@
+h1 {
+    left-margin: 10px;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.table {
+    position: relative;
+    left: 150px;
+    border-collapse: collapse;
+    margin: 20px;
+}
+
+.table td {
+    border-bottom: 1px solid blue;
+    width: 120px;
+}
+
+.table_box {
+    min-height: 720px;
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: rgb(220, 241, 10);
+}
+
+.buttons a {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 7px;
+}
+a:hover {
+  background-color: red;
+}

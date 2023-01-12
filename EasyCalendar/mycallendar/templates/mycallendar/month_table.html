@@ -1,0 +1,52 @@
+<div class="table_box">
+    <table class="table">
+        <thead>
+        <tr style="text-align: left;">
+            <th>Nr.</th>
+            <th>Dzień</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for day in days %}
+        <tr {% if day == today %} style="background-color:grey;" {% endif %}>
+            <td {% if day.isoweekday == 7 %}
+                      style="background-color:red;"
+                      {% elif day.isoweekday == 6 %}
+                      style="background-color:green;"
+                      {% endif %}>
+
+                {% if day == today %}
+                <strong> {{ day.day }} </strong>
+                {% else %}
+                {{ day.day }}
+                {% endif %}
+
+            </td>
+            <td {% if day.isoweekday == 7 %}
+                      style="background-color:red;"
+                      {% elif day.isoweekday == 6 %}
+                      style="background-color:green;"
+                      {% endif %}>
+                {% if day == today %}
+                <strong> {{ day|date:"l" }} </strong>
+                {% else %}
+                {{ day|date:"l" }}
+                {% endif %}
+
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="buttons">
+    {% if prev %}
+    <a href="{% url 'calendar_month' prev_year prev %}"> Prev </a>
+    {% endif %}
+
+    <a href="{% url 'current_month' %}"> Current </a>
+
+    {% if next %}
+    <a href="{% url 'calendar_month' next_year next %}"> Next </a>
+    {% endif %}
+</div>

@@ -1,0 +1,76 @@
+<div class="table_box">
+    <table class="caledar">
+        <thead>
+        <tr>
+            <th>Poniedziałek</th>
+            <th>Wtorek</th>
+            <th>Środa</th>
+            <th>Czwartek</th>
+            <th>Piątek</th>
+            <th>Sobota</th>
+            <th>Niedziela</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for week in days_month %}
+                <tr>
+                    <td {% if week.0 == today %} style="background-color:rgba(180, 180, 180, 0.9);" {% elif week.0 == None %} style="opacity: 0.0;" {% endif %}>{% if week.0 == today %}
+                            <strong> {{ week.0.day }} </strong>
+                        {% else %}
+                            {{ week.0.day }}
+                        {% endif %}
+                    </td>
+                    <td {% if week.1 == today %} style="background-color:rgba(180, 180, 180, 0.9);" {% elif week.1 == None %} style="opacity: 0.0;" {% endif %}>{% if week.1 == today %}
+                            <strong> {{ week.1.day }} </strong>
+                        {% else %}
+                            {{ week.1.day }}
+                        {% endif %}
+                    </td>
+                    <td {% if week.2 == today %} style="background-color:rgba(180, 180, 180, 0.9);" {% elif week.2 == None %} style="opacity: 0.0;" {% endif %}>{% if week.2 == today %}
+                            <strong> {{ week.2.day }} </strong>
+                        {% else %}
+                            {{ week.2.day }}
+                        {% endif %}
+                    </td>
+                    <td {% if week.3 == today %} style="background-color:rgba(180, 180, 180, 0.9);" {% elif week.3 == None %} style="opacity: 0.0;" {% endif %}>
+                        {% if week.3 == today %}
+                            <strong> {{ week.3.day }} </strong>
+                        {% else %}
+                            {{ week.3.day }}
+                        {% endif %}
+                    </td>
+                    <td {% if week.4 == today %} style="background-color:rgba(180, 180, 180, 0.9);" {% elif week.4 == None %} style="opacity: 0.0;" {% endif %}>{% if week.4 == today %}
+                            <strong> {{ week.4.day }} </strong>
+                        {% else %}
+                            {{ week.4.day }}
+                        {% endif %}
+                    </td>
+                    <td class="saturday" {% if week.5 == today %} style="background-color:rgba(70, 255, 70, 0.9);"
+                        {% elif week.5 == None %} style="opacity: 0.0;" {% endif %}>{% if week.5 == today %}
+                            <strong> {{ week.5.day }} </strong>
+                        {% else %}
+                            {{ week.5.day }}
+                        {% endif %}
+                    </td>
+                    <td class="sunday" {% if week.6 == today %} style="background-color:rgba(255, 70, 70, 0.9);" {% elif week.6 == None %} style="opacity: 0.0;" {% endif %}>{% if week.6 == today %}
+                            <strong> {{ week.6.day }} </strong>
+                        {% else %}
+                            {{ week.6.day }}
+                        {% endif %}
+                    </td>
+                </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="buttons">
+    {% if prev %}
+    <a href="{% url 'calendar_month' prev_year prev %}"> Prev </a>
+    {% endif %}
+
+    <a href="{% url 'current_month' %}"> Current </a>
+
+    {% if next %}
+    <a href="{% url 'calendar_month' next_year next %}"> Next </a>
+    {% endif %}
+</div>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <title> {% block title %} Default title {% endblock %} </title>
+        <link href="{% static 'mycallendar/styles/main.css' %}" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h1> {% block main_title %} {% endblock %}</h1>
+        {% block main_content %}
+        A tutaj powinna się pojawić treśc strony !!!
+        {% endblock %}
+
+
+    </body>
+</html>

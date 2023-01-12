@@ -1,0 +1,14 @@
+{% extends 'mycallendar/base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ days.0|date:"F Y" }}
+{% endblock %}
+
+{% block main_title %}
+    {{ days.0|date:"F Y" }}
+{% endblock %}
+
+{% block main_content %}
+    {% include 'mycallendar/month_table.html' %}
+{% endblock %}

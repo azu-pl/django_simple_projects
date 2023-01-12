@@ -1,0 +1,68 @@
+.content {
+    width: 760px;
+    position: relative;
+    left: 20%;
+}
+
+h1 {
+    left-margin: 10px;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.table_box {
+    min-height: 650px;
+    width: 660px;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: rgb(220, 241, 10);
+}
+
+.buttons a {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 7px;
+}
+a:hover {
+  background-color: red;
+}
+
+table {
+    border: 0px solid black;
+    position: relative;
+    left: 20px;
+    top: 50px;
+    border-radius: 7px;
+
+}
+
+table tr td {
+    border: 1px solid black;
+    height: 80px;
+    width: 80px;
+    border-radius: 4px;
+}
+
+table th {
+    border-bottom: 1px solid red;
+    color: red;
+    height: 20px;
+}
+
+table td {
+    background-color: white;
+    text-align: right;
+    vertical-align: text-top;
+}
+
+.saturday {
+    background-color: green;
+}
+
+.sunday {
+    background-color: red;
+}
